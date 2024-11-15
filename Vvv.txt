@@ -1,0 +1,1090 @@
+crashy = true
+on = false
+if game.CoreGui:FindFirstChild('gui') then
+    game.CoreGui.ESP:Destroy()
+elseif game.Players.LocalPlayer.PlayerGui:FindFirstChild('gui') then
+    game.Players.LocalPlayer.PlayerGui.ESP:Destroy()
+end
+local main = Instance.new('Frame', V1)
+local main1 = Instance.new('Frame', V1)
+local FPS = Instance.new("ScreenGui")
+local V1 = Instance.new('Frame', main)
+local S = Instance.new("ScreenGui")
+local UICorner = Instance.new("UICorner")
+local UICorner2 = Instance.new("UICorner")
+local UICorner3 = Instance.new("UICorner")
+local UICorner4 = Instance.new("UICorner")
+local UICorner5 = Instance.new("UICorner")
+local UICorner6 = Instance.new("UICorner")
+local UICorner7 = Instance.new("UICorner")
+local UICorner8 = Instance.new("UICorner")
+local UICorner9 = Instance.new("UICorner")
+local UICorner10 = Instance.new("UICorner")
+local UICorner11 = Instance.new("UICorner")
+local UICorner12 = Instance.new("UICorner")
+local UICorner13 = Instance.new("UICorner")
+local UICorner14 = Instance.new("UICorner")
+local UICorner15 = Instance.new("UICorner")
+local UICorner16 = Instance.new("UICorner")
+local Open = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Esp1 = Instance.new("TextButton")
+local Esp3 = Instance.new("TextButton")
+local exit = Instance.new("TextButton")
+local AntiNextbot1 = Instance.new("TextButton")
+local AntiNextbot = Instance.new("TextButton")
+local Esp5 = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
+local Open1 = Instance.new("TextButton")
+local Close1 = Instance.new("TextButton")
+local Fps = Instance.new("TextLabel")
+local Time = Instance.new("TextLabel")
+local Nick = Instance.new("TextLabel")
+local Inmage = Instance.new("ImageLabel")
+local Data = Instance.new("TextLabel")
+local Info5 = Instance.new("TextLabel")
+local Nide1 = Instance.new("TextButton")
+local Nide = Instance.new("TextButton")
+local YouTube = Instance.new("TextLabel")
+
+
+--Properties:
+local gui = Instance.new('ScreenGui')
+if crashy == false then
+    gui.Parent = game.CoreGui
+else
+    gui.Parent = game.Players.LocalPlayer.PlayerGui
+end
+gui.Name = "gui"
+gui.ResetOnSpawn = false
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+S.Name = "S"
+S.Parent = game.CoreGui
+
+--Menu:
+main.Parent = gui
+main.AnchorPoint = Vector2.new(0.9, 0)
+main.Active = true
+main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+main.Position = UDim2.new(0.6, 0, 0.3, 0)
+main.Size = UDim2.new(0, 180, 0, 200)
+main.Draggable = true
+
+main1.Parent = main
+main1.AnchorPoint = Vector2.new(0.9, 0)
+main1.Active = true
+main1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+main1.Position = UDim2.new(2, 0, 0, 0)
+main1.Size = UDim2.new(0, 180, 0, 200)
+main1.Visible = false
+
+V1.Parent = S
+V1.AnchorPoint = Vector2.new(0.9, 0)
+V1.Active = true
+V1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+V1.BackgroundTransparency = 1.000
+V1.Position = UDim2.new(0.997, 0, 0.13, 0)
+V1.Size = UDim2.new(0, 18, 0, 18)
+
+--UICorner:
+UICorner.Parent = main
+UICorner2.Parent = Open
+UICorner3.Parent = V1
+UICorner4.Parent = Close
+UICorner5.Parent = Esp1
+UICorner6.Parent = exit
+UICorner7.Parent = Esp3
+UICorner8.Parent = AntiNextbot1
+UICorner9.Parent = AntiNextbot
+UICorner10.Parent = Esp5
+UICorner11.Parent = Speed
+UICorner12.Parent = Open1
+UICorner13.Parent = Close1
+UICorner14.Parent = main1
+UICorner15.Parent = Nide
+UICorner16.Parent = Nide1
+
+Open.Name = "Open"
+Open.Parent = V1
+Open.AnchorPoint = Vector2.new(0.9, 0)
+Open.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Open.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Open.Size = UDim2.new(0, 20, 0, 20)
+Open.Font = Enum.Font.SourceSans
+Open.Text = "+"
+Open.TextColor3 = Color3.fromRGB(0, 153, 0)
+Open.TextSize = 39.000
+Open.Visible = false
+Open.MouseButton1Down:Connect(function()
+main.Visible = true
+Open.Visible = false
+Close.Visible = true
+end)
+
+Close.Name = "Close"
+Close.Parent = V1
+Close.AnchorPoint = Vector2.new(0.9, 0)
+Close.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Close.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "-"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextSize = 39.000
+Close.MouseButton1Down:Connect(function()
+main.Visible = false
+Close.Visible = false
+Open.Visible = true
+end)
+
+exit.Name = "exit"
+exit.Parent = main
+exit.AnchorPoint = Vector2.new(0.9, 0)
+exit.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+exit.Position = UDim2.new(0.615, 0, 0.87, 0)
+exit.Size = UDim2.new(0, 50, 0, 20)
+exit.Font = Enum.Font.SourceSans
+exit.Text = " Exit Script"
+exit.TextColor3 = Color3.fromRGB(255, 0, 0)
+exit.TextSize = 14.000
+exit.MouseButton1Down:Connect(function()
+gui:Destroy()
+S:Destroy()
+end)
+
+
+Esp1.Name = "Esp1"
+Esp1.Parent = main
+Esp1.AnchorPoint = Vector2.new(1, 0)
+Esp1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp1.Position = UDim2.new(0.45, 0, 0.2, 0)
+Esp1.Size = UDim2.new(0, 69, 0, 25)
+Esp1.Font = Enum.Font.SourceSans
+Esp1.Text = "Nextbot Esp"
+Esp1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp1.TextSize = 13.000
+Esp1.MouseButton1Down:Connect(function()
+local function filterEnglishName(name)
+    -- Убираем все символы, кроме английских букв, цифр и пробелов
+    return name:gsub("[^%w%s]", "")
+end
+
+-- Функция для проверки значительного изменения расстояния
+local function hasDistanceChanged(prevDistance, currentDistance)
+    return math.abs(prevDistance - currentDistance) >= 1 -- Обновлять, если изменение более 1 stud
+end
+
+local function createESP(v)
+    -- Проверяем наличие HumanoidRootPart только один раз
+    local humanoidRootPart = v:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then
+        return -- Если нет HumanoidRootPart, не создаем ESP
+    end
+
+    -- Создаем ESP только если его еще нет
+    if not v:FindFirstChild("ESP") then
+        -- Создаем сферу ESP
+        local sphereHandle = Instance.new("SphereHandleAdornment")
+        sphereHandle.Radius = 3
+        sphereHandle.Adornee = humanoidRootPart
+        sphereHandle.AlwaysOnTop = true
+        sphereHandle.Color3 = Color3.fromRGB(255, 0, 0)
+        sphereHandle.Transparency = 0.2
+        sphereHandle.ZIndex = 1
+        sphereHandle.Name = "ESP"
+        sphereHandle.AdornCullingMode = Enum.AdornCullingMode.Never
+        sphereHandle.Parent = v
+
+        -- Создаем текст с именем над сферой (выше на 2 уровня)
+        local nameTag = Instance.new("BillboardGui")
+        nameTag.Name = "NameTag"
+        nameTag.Adornee = humanoidRootPart
+        nameTag.Size = UDim2.new(0, 500, 0, 100) -- Увеличиваем область для текста
+        nameTag.StudsOffset = Vector3.new(0, sphereHandle.Radius * 2 + 2, 0) -- Дважды выше сферы
+        nameTag.AlwaysOnTop = true
+
+        local nameLabel = Instance.new("TextLabel")
+        nameLabel.Parent = nameTag
+        nameLabel.Size = UDim2.new(1, 0, 1, 0)
+        nameLabel.BackgroundTransparency = 1
+        nameLabel.Text = filterEnglishName(v.Name) -- Отображаем только английское имя
+        nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Белый текст
+        nameLabel.TextStrokeTransparency = 0 -- Черная обводка текста
+        nameLabel.TextScaled = true -- Масштабируем текст по области
+        nameLabel.Font = Enum.Font.SourceSansBold
+        nameLabel.TextWrapped = false -- Отключаем перенос текста
+
+        nameTag.Parent = v
+
+        -- Создаем текст расстояния с "Studs" под сферой
+        local distanceTag = Instance.new("BillboardGui")
+        distanceTag.Name = "DistanceTag"
+        distanceTag.Adornee = humanoidRootPart
+        distanceTag.Size = UDim2.new(0, 500, 0, 100) -- Увеличиваем область для текста
+        distanceTag.StudsOffset = Vector3.new(0, -(sphereHandle.Radius + 4), 0) -- Ниже сферы
+        distanceTag.AlwaysOnTop = true
+
+        local distanceLabel = Instance.new("TextLabel")
+        distanceLabel.Parent = distanceTag
+        distanceLabel.Size = UDim2.new(1, 0, 1, 0)
+        distanceLabel.BackgroundTransparency = 1
+        distanceLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Белый текст
+        distanceLabel.TextStrokeTransparency = 0 -- Черная обводка текста
+        distanceLabel.TextScaled = true
+        distanceLabel.Font = Enum.Font.SourceSansBold
+        distanceLabel.TextWrapped = false -- Отключаем перенос текста
+
+        distanceTag.Parent = v
+
+        -- Обновление расстояния только если оно изменилось более чем на 1 stud
+        local prevDistance = math.huge -- Инициализируем начальное значение как максимально возможное
+        game:GetService("RunService").RenderStepped:Connect(function()
+            local player = game.Players.LocalPlayer
+            if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                local distance = (humanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                if hasDistanceChanged(prevDistance, distance) then
+                    distanceLabel.Text = string.format("Studs: %.1f", distance) -- Добавляем "Studs" перед числом
+                    prevDistance = distance -- Обновляем предыдущее расстояние
+                end
+            end
+        end)
+    end
+end
+
+local function updateESP(v)
+    if v:GetAttribute("Team") == "Nextbot" then
+        -- Создаем ESP, если его еще нет
+        createESP(v)
+    else
+        -- Удаляем ESP, NameTag и DistanceTag, если объект больше не удовлетворяет условию
+        for _, tagName in pairs({"ESP", "NameTag", "DistanceTag"}) do
+            local tag = v:FindFirstChild(tagName)
+            if tag then
+                tag:Destroy()
+            end
+        end
+    end
+end
+
+local function setupESPWatcher()
+    local playersFolder = game:GetService("Workspace"):WaitForChild("Game"):WaitForChild("Players")
+
+    -- Проверяем всех существующих объектов
+    for _, child in pairs(playersFolder:GetChildren()) do
+        updateESP(child)
+    end
+
+    -- Подписка на добавление новых объектов
+    playersFolder.ChildAdded:Connect(function(child)
+        child:GetAttributeChangedSignal("Team"):Connect(function()
+            updateESP(child)
+        end)
+
+        updateESP(child)
+    end)
+
+    -- Удаление ESP, если объект пропадает
+    playersFolder.ChildRemoved:Connect(function(child)
+        for _, tagName in pairs({"ESP", "NameTag", "DistanceTag"}) do
+            local tag = child:FindFirstChild(tagName)
+            if tag then
+                tag:Destroy()
+            end
+        end
+    end)
+end
+
+-- Запуск
+setupESPWatcher()
+end)
+
+Esp3.Name = "Esp3"
+Esp3.Parent = main
+Esp3.AnchorPoint = Vector2.new(1, 0)
+Esp3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp3.Position = UDim2.new(0.92, 0, 0.2, 0)
+Esp3.Size = UDim2.new(0, 69, 0, 25)
+Esp3.Font = Enum.Font.SourceSans
+Esp3.Text = "Players Esp"
+Esp3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp3.TextSize = 13.000
+Esp3.MouseButton1Down:Connect(function()
+local function filterEnglishName(name)
+    return name:gsub("[^%w%s]", "") -- Убираем все символы, кроме английских букв, цифр и пробелов
+end
+
+-- Функция для создания ESP для части тела
+local function createESPForPart(part, color)
+    if part:FindFirstChild("ESPBox") or part:FindFirstChild("ESPSphere") then
+        return
+    end
+
+    local adornment
+    if part.Name == "Head" then
+        adornment = Instance.new("SphereHandleAdornment")
+        adornment.Radius = part.Size.Magnitude / 2 + 0.1
+    else
+        adornment = Instance.new("BoxHandleAdornment")
+        adornment.Size = part.Size + Vector3.new(0.1, 0.1, 0.1)
+    end
+
+    adornment.Adornee = part
+    adornment.AlwaysOnTop = true
+    adornment.Color3 = color
+    adornment.Transparency = 0.6
+    adornment.ZIndex = 1
+    adornment.Name = (part.Name == "Head" and "ESPSphere" or "ESPBox")
+    adornment.AdornCullingMode = Enum.AdornCullingMode.Never
+    adornment.Parent = part
+end
+
+-- Функция для создания текстовой метки имени игрока
+local function createPlayersTag(character)
+    local head = character:FindFirstChild("Head")
+    if head and not character:FindFirstChild("PlayersTag") then
+        local PlayersTag = Instance.new("BillboardGui")
+        PlayersTag.Name = "PlayersTag"
+        PlayersTag.Adornee = head
+        PlayersTag.Size = UDim2.new(0, 50, 0, 12)
+        PlayersTag.StudsOffset = Vector3.new(0, 2, 0)
+        PlayersTag.AlwaysOnTop = true
+
+        local nameLabel = Instance.new("TextLabel")
+        nameLabel.Parent = PlayersTag
+        nameLabel.Size = UDim2.new(1, 0, 1, 0)
+        nameLabel.BackgroundTransparency = 1
+        nameLabel.Text = filterEnglishName(character.Name)
+        nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Белый цвет по умолчанию
+        nameLabel.TextStrokeTransparency = 0 -- Черная обводка
+        nameLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        nameLabel.Font = Enum.Font.SourceSansBold
+        nameLabel.TextSize = 10
+        nameLabel.Name = "NameLabel"
+
+        PlayersTag.Parent = character
+    end
+end
+
+-- Обновление цвета имени игрока
+local function updatePlayerName(character)
+    local nameTag = character:FindFirstChild("PlayersTag")
+    if nameTag then
+        local nameLabel = nameTag:FindFirstChild("NameLabel")
+        if nameLabel then
+            local revivesFolder = character:FindFirstChild("Revives")
+            if revivesFolder then
+                nameLabel.Text = "Lift up"
+                nameLabel.TextColor3 = Color3.fromRGB(255, 255, 0) -- Желтый текст
+            else
+                nameLabel.Text = filterEnglishName(character.Name)
+                nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Белый текст
+            end
+        end
+    end
+end
+
+-- Функция для создания дистанции
+local function createPlayersDistance(character)
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if humanoidRootPart and not character:FindFirstChild("PlayersDistance") then
+        local PlayersDistance = Instance.new("BillboardGui")
+        PlayersDistance.Name = "PlayersDistance"
+        PlayersDistance.Adornee = humanoidRootPart
+        PlayersDistance.Size = UDim2.new(0, 50, 0, 12)
+        PlayersDistance.StudsOffset = Vector3.new(0, -3, 0)
+        PlayersDistance.AlwaysOnTop = true
+
+        local distanceLabel = Instance.new("TextLabel")
+        distanceLabel.Parent = PlayersDistance
+        distanceLabel.Size = UDim2.new(1, 0, 1, 0)
+        distanceLabel.BackgroundTransparency = 1
+        distanceLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        distanceLabel.TextStrokeTransparency = 0 -- Черная обводка
+        distanceLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+        distanceLabel.Font = Enum.Font.SourceSansBold
+        distanceLabel.TextSize = 10
+
+        PlayersDistance.Parent = character
+
+        -- Используем RenderStepped для обновления расстояния
+        game:GetService("RunService").RenderStepped:Connect(function()
+            local player = game.Players.LocalPlayer
+            if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                local distance = (humanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                distanceLabel.Text = string.format("Studs: %.1f", distance)
+            end
+        end)
+    end
+end
+
+-- Функция для обновления смещения текста в зависимости от расстояния
+local function updatePlayerNamePosition(character)
+    local nameTag = character:FindFirstChild("PlayersTag")
+    local head = character:FindFirstChild("Head")
+    local player = game.Players.LocalPlayer
+    if nameTag and head and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        local distance = (head.Position - player.Character.HumanoidRootPart.Position).Magnitude
+
+        -- Расстояние от 150 до 300 метров
+        local offset = 2 -- Стартовое смещение вверх
+        if distance > 300 then
+            offset = 17 -- Максимальное смещение вверх
+        elseif distance < 150 then
+            offset = 2 -- Возврат к исходной позиции
+        else
+            offset = 2 + (17 - 2) * ((distance - 150) / (300 - 150)) -- Пропорциональное изменение
+        end
+
+        -- Обновление смещения текста
+        nameTag.StudsOffset = Vector3.new(0, offset, 0)
+    end
+end
+
+-- Функция создания ESP
+local function createESP(character)
+    if character == game.Players.LocalPlayer.Character then
+        return
+    end
+
+    -- Только создаем ESP для частей, если их нет
+    local targetParts = {
+        "Head", "Torso", "Left Arm", "Right Arm", "Left Leg", "Right Leg"
+    }
+
+    local revivesFolder = character:FindFirstChild("Revives")
+    local espColor = revivesFolder and Color3.fromRGB(255, 255, 0) or Color3.fromRGB(0, 0, 255)
+
+    for _, partName in ipairs(targetParts) do
+        local part = character:FindFirstChild(partName)
+        if part then
+            createESPForPart(part, espColor)
+        end
+    end
+
+    createPlayersTag(character)
+    createPlayersDistance(character)
+end
+
+-- Обновление цвета ESP
+local function updateESPColor(character)
+    local revivesFolder = character:FindFirstChild("Revives")
+    local espColor = revivesFolder and Color3.fromRGB(255, 255, 0) or Color3.fromRGB(0, 0, 255)
+
+    local targetParts = {
+        "Head", "Torso", "Left Arm", "Right Arm", "Left Leg", "Right Leg"
+    }
+
+    for _, partName in ipairs(targetParts) do
+        local part = character:FindFirstChild(partName)
+        if part then
+            local adornment = part:FindFirstChild("ESPBox") or part:FindFirstChild("ESPSphere")
+            if adornment then
+                adornment.Color3 = espColor
+            end
+        end
+    end
+end
+
+-- Обработка событий появления/удаления игроков
+local function monitorCharacter(character)
+    createESP(character)
+    updatePlayerName(character)
+
+    -- Следим за добавлением новых частей
+    character.ChildAdded:Connect(function(child)
+        if child:IsA("BasePart") then
+            createESP(character)
+        end
+
+        -- Следим за папкой Revives
+        if child.Name == "Revives" then
+            updateESPColor(character)
+            updatePlayerName(character)
+        end
+    end)
+
+    -- Следим за удалением части или папки Revives
+    character.ChildRemoved:Connect(function(child)
+        if child:IsA("BasePart") then
+            -- Мы не удаляем ESP, просто обновляем его
+            createESP(character)
+        end
+
+        if child.Name == "Revives" then
+            updateESPColor(character)
+            updatePlayerName(character)
+        end
+    end)
+
+    -- Следим за обновлением позиции текста
+    game:GetService("RunService").RenderStepped:Connect(function()
+        updatePlayerNamePosition(character)
+    end)
+end
+
+local function monitorPlayer(player)
+    player.CharacterAdded:Connect(function(character)
+        wait(1)
+        monitorCharacter(character)
+    end)
+
+    if player.Character then
+        monitorCharacter(player.Character)
+    end
+end
+
+-- Основная функция для отслеживания всех игроков
+local function setupESPWatcher()
+    local players = game.Players
+    players.PlayerAdded:Connect(monitorPlayer)
+
+    for _, player in ipairs(players:GetPlayers()) do
+        monitorPlayer(player)
+    end
+end
+
+setupESPWatcher()
+end)
+
+
+
+AntiNextbot1.Name = "AntiNextbot1"
+AntiNextbot1.Parent = main
+AntiNextbot1.AnchorPoint = Vector2.new(1, 0)
+AntiNextbot1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+AntiNextbot1.Position = UDim2.new(0.92, 0, 0.4, 0)
+AntiNextbot1.Size = UDim2.new(0, 69, 0, 25)
+AntiNextbot1.Font = Enum.Font.SourceSans
+AntiNextbot1.Text = "AntiNextbot off"
+AntiNextbot1.TextColor3 = Color3.fromRGB(255, 0, 0)
+AntiNextbot1.TextSize = 13.000
+
+AntiNextbot.Name = "AntiNextbot"
+AntiNextbot.Parent = main
+AntiNextbot.AnchorPoint = Vector2.new(1, 0)
+AntiNextbot.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+AntiNextbot.Position = UDim2.new(0.92, 0, 0.4, 0)
+AntiNextbot.Size = UDim2.new(0, 69, 0, 25)
+AntiNextbot.Font = Enum.Font.SourceSans
+AntiNextbot.Text = "AntiNextbot on"
+AntiNextbot.TextColor3 = Color3.fromRGB(0, 128, 0)
+AntiNextbot.TextSize = 13.000
+
+
+AntiNextbot.Visible = false
+-- Флаг для управления состоянием
+local isScriptRunning = false
+local connections = {} -- Для хранения подключений
+local circleObjects = {} -- Для хранения созданных кругов
+
+-- Функция для вычисления расстояния между двумя точками
+local function getDistance(pointA, pointB)
+    return (pointA - pointB).Magnitude
+end
+
+-- Функция для телепортации к самому дальнему игроку
+local function teleportToFarthestPlayer()
+    if not isScriptRunning then return end
+
+    local playersFolder = game:GetService("Workspace"):WaitForChild("Game"):WaitForChild("Players")
+    local validPlayers = {}
+
+    for _, playerCharacter in ipairs(playersFolder:GetChildren()) do
+        if playerCharacter ~= game.Players.LocalPlayer.Character and not playerCharacter:FindFirstChild("Revives") then
+            table.insert(validPlayers, playerCharacter)
+        end
+    end
+
+    if #validPlayers > 0 then
+        local farthestPlayer = nil
+        local maxDistance = 0
+        local localPlayer = game.Players.LocalPlayer
+
+        for _, player in ipairs(validPlayers) do
+            local humanoidRootPart = player:FindFirstChild("HumanoidRootPart")
+            if humanoidRootPart then
+                local distance = getDistance(localPlayer.Character.HumanoidRootPart.Position, humanoidRootPart.Position)
+                if distance > maxDistance then
+                    maxDistance = distance
+                    farthestPlayer = player
+                end
+            end
+        end
+
+        if farthestPlayer then
+            local localCharacter = game.Players.LocalPlayer.Character
+            if localCharacter and localCharacter:FindFirstChild("HumanoidRootPart") then
+                localCharacter.HumanoidRootPart.CFrame = farthestPlayer.HumanoidRootPart.CFrame
+            end
+        end
+    end
+end
+
+-- Функция для создания невидимого круга
+local function createInvisibleCircle(v, radius)
+    if not isScriptRunning then return end
+
+    local humanoidRootPart = v:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then return end
+
+    local circle = Instance.new("CylinderHandleAdornment")
+    circle.Radius = radius -- Динамический радиус
+    circle.Height = 0.2
+    circle.Adornee = humanoidRootPart
+    circle.Name = "InvisibleCircle"
+    circle.Transparency = 1
+    circle.Parent = v
+
+    -- Сохраняем созданные круги для очистки
+    table.insert(circleObjects, circle)
+
+    local function checkCollision()
+        if not isScriptRunning then return end
+
+        local localCharacter = game.Players.LocalPlayer.Character
+        if not localCharacter then return end
+
+        local localHumanoidRootPart = localCharacter:FindFirstChild("HumanoidRootPart")
+        if not localHumanoidRootPart then return end
+
+        local distance = getDistance(humanoidRootPart.Position, localHumanoidRootPart.Position)
+        if distance <= circle.Radius then
+            teleportToFarthestPlayer()
+        end
+    end
+
+    -- Подключаем проверку на `Stepped` и сохраняем соединение
+    local connection = game:GetService("RunService").Stepped:Connect(checkCollision)
+    table.insert(connections, connection)
+end
+
+-- Функция для обновления невидимого круга
+local function updateInvisibleCircle(v)
+    local radius = 10  -- Пример динамического радиуса, можно изменить
+    if v:GetAttribute("Team") == "Nextbot" then
+        if not v:FindFirstChild("InvisibleCircle") then
+            createInvisibleCircle(v, radius)
+        end
+    else
+        local circle = v:FindFirstChild("InvisibleCircle")
+        if circle then
+            circle:Destroy()
+        end
+    end
+end
+
+-- Подписка на изменения в папке Players
+local function setupInvisibleCircleWatcher()
+    local playersFolder = game:GetService("Workspace"):WaitForChild("Game"):WaitForChild("Players")
+
+    for _, child in pairs(playersFolder:GetChildren()) do
+        updateInvisibleCircle(child)
+    end
+
+    local addedConnection = playersFolder.ChildAdded:Connect(updateInvisibleCircle)
+    local removedConnection = playersFolder.ChildRemoved:Connect(function(child)
+        local circle = child:FindFirstChild("InvisibleCircle")
+        if circle then
+            circle:Destroy()
+        end
+    end)
+
+    -- Сохраняем подключения
+    table.insert(connections, addedConnection)
+    table.insert(connections, removedConnection)
+end
+
+-- Функция для очистки всех подключений и объектов
+local function clearConnectionsAndObjects()
+    for _, connection in ipairs(connections) do
+        connection:Disconnect()
+    end
+    connections = {}
+
+    for _, circle in ipairs(circleObjects) do
+        if circle.Parent then
+            circle:Destroy()
+        end
+    end
+    circleObjects = {}
+end
+
+-- Управление скриптом
+local function startScript()
+    if not isScriptRunning then
+        isScriptRunning = true
+        setupInvisibleCircleWatcher()
+        AntiNextbot1.Visible = false
+        AntiNextbot.Visible = true
+    end
+end
+
+local function stopScript()
+    if isScriptRunning then
+        isScriptRunning = false
+        clearConnectionsAndObjects()
+        print("Скрипт остановлен.")
+        AntiNextbot.Visible = false
+        AntiNextbot1.Visible = true
+    end
+end
+
+-- Подключение кнопок
+AntiNextbot1.MouseButton1Down:Connect(startScript)
+AntiNextbot.MouseButton1Down:Connect(stopScript)
+
+
+
+Esp5.Name = "Esp5"
+Esp5.Parent = main
+Esp5.AnchorPoint = Vector2.new(1, 0)
+Esp5.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp5.Position = UDim2.new(0.45, 0, 0.4, 0)
+Esp5.Size = UDim2.new(0, 69, 0, 25)
+Esp5.Font = Enum.Font.SourceSans
+Esp5.Text = "Candy Esp"
+Esp5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp5.TextSize = 13.000
+Esp5.MouseButton1Down:Connect(function()
+local ticketsFolder = workspace.Game.Effects.Tickets
+
+-- Функция для рекурсивного поиска всех BasePart и добавления SphereHandleAdornment
+local function addAdornmentToHumanoidRootPart(parent)
+    for _, obj in ipairs(parent:GetChildren()) do
+        if obj:IsA("Model") then
+            -- Ищем HumanoidRootPart в модели
+            local humanoidRootPart = obj:FindFirstChild("HumanoidRootPart")
+            if humanoidRootPart then
+                -- Проверка на наличие уже созданного ESP
+                if not humanoidRootPart:FindFirstChild("NameTag") then
+                    -- Создаем SphereHandleAdornment
+                    local adornment = Instance.new("SphereHandleAdornment")
+                    adornment.Adornee = humanoidRootPart
+                    adornment.Radius = 1 -- Радиус 1
+                    adornment.Color3 = Color3.fromRGB(255, 165, 0) -- Оранжевый цвет
+                    adornment.AlwaysOnTop = true
+                    adornment.ZIndex = 1
+                    adornment.Transparency = 0.5
+                    adornment.AdornCullingMode = Enum.AdornCullingMode.Never -- Никогда не скрывать
+                    adornment.Parent = humanoidRootPart
+
+                    -- Добавляем светящийся эффект для объекта
+                    local pointLight = Instance.new("PointLight")
+                    pointLight.Parent = humanoidRootPart
+                    pointLight.Color = Color3.fromRGB(255, 165, 0) -- Оранжевый свет
+                    pointLight.Range = 10 -- Дальность света
+                    pointLight.Brightness = 2 -- Яркость света
+                    pointLight.Enabled = true
+
+                    -- Создание nameTag (ярлыка с именем)
+                    local nameTag = Instance.new("BillboardGui")
+                    nameTag.Name = "NameTag"
+                    nameTag.Adornee = humanoidRootPart
+                    nameTag.Size = UDim2.new(0, 200, 0, 50) -- Размер области для текста
+                    nameTag.StudsOffset = Vector3.new(0, adornment.Radius * 2 + 2, 0) -- Смещение для текста чуть выше сферы
+                    nameTag.AlwaysOnTop = true
+
+                    local nameLabel = Instance.new("TextLabel")
+                    nameLabel.Parent = nameTag
+                    nameLabel.Size = UDim2.new(1, 0, 1, 0)
+                    nameLabel.BackgroundTransparency = 1
+                    nameLabel.Text = "Candy" -- Строка с текстом "Candy"
+                    nameLabel.TextColor3 = Color3.fromRGB(255, 165, 0) -- Оранжевый цвет текста
+                    nameLabel.TextStrokeTransparency = 0 -- Черная обводка
+                    nameLabel.TextScaled = true -- Масштабируем текст по области
+                    nameLabel.Font = Enum.Font.SourceSansBold
+                    nameLabel.TextWrapped = false -- Отключаем перенос текста
+
+                    -- Создание distanceTag (ярлыка с расстоянием)
+                    local distanceTag = Instance.new("BillboardGui")
+                    distanceTag.Name = "DistanceTag"
+                    distanceTag.Adornee = humanoidRootPart
+                    distanceTag.Size = UDim2.new(0, 200, 0, 50) -- Размер области для текста
+                    distanceTag.StudsOffset = Vector3.new(0, -(adornment.Radius + 4), 0) -- Смещение ниже сферы
+                    distanceTag.AlwaysOnTop = true
+
+                    local distanceLabel = Instance.new("TextLabel")
+                    distanceLabel.Parent = distanceTag
+                    distanceLabel.Size = UDim2.new(1, 0, 1, 0)
+                    distanceLabel.BackgroundTransparency = 1
+                    distanceLabel.TextColor3 = Color3.fromRGB(255, 165, 0) -- Оранжевый цвет текста
+                    distanceLabel.TextStrokeTransparency = 0 -- Черная обводка
+                    distanceLabel.TextScaled = true
+                    distanceLabel.Font = Enum.Font.SourceSansBold
+                    distanceLabel.TextWrapped = false -- Отключаем перенос текста
+
+                    -- Привязка nameTag и distanceTag к HumanoidRootPart
+                    nameTag.Parent = humanoidRootPart
+                    distanceTag.Parent = humanoidRootPart
+                end
+            end
+        elseif obj:IsA("Folder") or obj:IsA("Model") then
+            -- Рекурсивный вызов для вложенных объектов
+            addAdornmentToHumanoidRootPart(obj)
+        end
+    end
+end
+
+-- Функция для обновления расстояния
+local function updateDistances()
+    local player = game.Players.LocalPlayer
+    if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        for _, model in ipairs(ticketsFolder:GetChildren()) do
+            if model:IsA("Model") then
+                local humanoidRootPart = model:FindFirstChild("HumanoidRootPart")
+                if humanoidRootPart then
+                    local distance = (humanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+                    local distanceTag = humanoidRootPart:FindFirstChild("DistanceTag")
+                    if distanceTag then
+                        local distanceLabel = distanceTag:FindFirstChild("TextLabel")
+                        if distanceLabel then
+                            distanceLabel.Text = string.format("Studs: %.1f", distance)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- Запуск функции для папки Tickets
+game:GetService("RunService").Heartbeat:Connect(function()
+    addAdornmentToHumanoidRootPart(ticketsFolder)
+    updateDistances()  -- Обновляем расстояния для всех объектов
+end)
+end)
+
+
+Speed.Name = "Speed"
+Speed.Parent = main
+Speed.AnchorPoint = Vector2.new(1, 0)
+Speed.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Speed.Position = UDim2.new(0.45, 0, 0.6, 0)
+Speed.Size = UDim2.new(0, 69, 0, 25)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = " Speed "
+Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+Speed.TextSize = 13.000
+Speed.MouseButton1Down:Connect(function()
+local speeds = 3  -- Устанавливаем скорость на 3
+local speaker = game:GetService("Players").LocalPlayer
+local heartbeat = game:GetService("RunService").Heartbeat
+local tpwalking = false
+local nowe = false
+
+local function updatespeed(char, hum)
+    if nowe == true then
+        tpwalking = false
+        heartbeat:Wait()
+        task.wait(0.1)
+        heartbeat:Wait()
+
+        -- Обновляем скорость только для Running и Swimming
+        for i = 1, speeds do
+            spawn(function()
+                tpwalking = true
+                while tpwalking and heartbeat:Wait() and char and hum and hum.Parent do
+                    if hum.MoveDirection.Magnitude > 0 then
+                        char:TranslateBy(hum.MoveDirection)
+                    end
+                end
+            end)
+        end
+    end
+end
+
+local function startSpeedEvade()
+    local char = speaker.Character
+    if not char or not char.Humanoid then return end
+    local hum = char.Humanoid
+
+    if nowe == true then
+        nowe = false
+        -- Включаем или меняем скорость только для нужных состояний
+        hum:SetStateEnabled(Enum.HumanoidStateType.Running, true)
+        hum:SetStateEnabled(Enum.HumanoidStateType.RunningNoPhysics, true)
+        hum:SetStateEnabled(Enum.HumanoidStateType.Swimming, true)
+        
+        -- Здесь задаем состояние "RunningNoPhysics", которое будет работать для нашей скорости
+        hum:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+    else
+        nowe = true
+        updatespeed(char, hum)
+        char.Animate.Disabled = true
+        for i, v in next, hum:GetPlayingAnimationTracks() do
+            v:AdjustSpeed(0)
+        end
+    end
+end
+
+startSpeedEvade()
+end)
+
+
+Open1.Name = "Open1"
+Open1.Parent = main
+Open1.AnchorPoint = Vector2.new(0.9, 0)
+Open1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Open1.Position = UDim2.new(0.99, 0, 0, 0)
+Open1.Size = UDim2.new(0, 20, 0, 20)
+Open1.Font = Enum.Font.SourceSans
+Open1.Text = ">"
+Open1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open1.TextSize = 39.000
+Open1.MouseButton1Down:Connect(function()
+main1.Visible = true
+Open1.Visible = false
+Close1.Visible = true
+end)
+
+Close1.Name = "Close1"
+Close1.Parent = main
+Close1.AnchorPoint = Vector2.new(0.9, 0)
+Close1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Close1.Position = UDim2.new(0.99, 0, 0, 0)
+Close1.Size = UDim2.new(0, 20, 0, 20)
+Close1.Font = Enum.Font.SourceSans
+Close1.Text = "<"
+Close1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close1.TextSize = 39.000
+Close1.Visible = false
+Close1.MouseButton1Down:Connect(function()
+main1.Visible = false
+Close1.Visible = false
+Open1.Visible = true
+end)
+
+
+Fps.Name = "Fps"
+Fps.Parent = main1
+Fps.Position = UDim2.new(0.5, 0, 0.5, 0)
+Fps.Font = Enum.Font.SourceSans
+Fps.Text = "FPS: Calculating..."
+Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fps.TextSize = 14.000
+
+
+local lastTime = tick()
+local fps = 0
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    local currentTime = tick()
+    fps = math.floor(1 / (currentTime - lastTime))
+    lastTime = currentTime
+    Fps.Text = "FPS: " .. fps
+end)
+
+Time.Name = "Time"
+Time.Parent = main1
+Time.Position = UDim2.new(0.5, 0, 0.6, 0)
+Time.Font = Enum.Font.SourceSans
+Time.Text = "Time: 0s"
+Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+Time.TextSize = 14.000
+
+local startTime = tick()
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    local elapsedTime = tick() - startTime
+    local seconds = math.floor(elapsedTime)
+    local minutes = math.floor(seconds / 60)
+    local hours = math.floor(minutes / 60)
+    minutes = minutes % 60
+    seconds = seconds % 60
+    
+    if hours > 0 then
+        Time.Text = string.format("Time: %dh %dm %ds", hours, minutes, seconds)
+    elseif minutes > 0 then
+        Time.Text = string.format("Time: %dm %ds", minutes, seconds)
+    else
+        Time.Text = string.format("Time: %ds", seconds)
+    end
+end)
+
+
+Nick.Name = "Nick"
+Nick.Parent = main1
+Nick.Position = UDim2.new(0.5, 0, 0.4, 0)
+Nick.Font = Enum.Font.SourceSans
+Nick.Text = string.rep("*", #game.Players.LocalPlayer.Name)
+Nick.TextColor3 = Color3.fromRGB(255, 255, 255)
+Nick.TextSize = 14.000
+
+Inmage.Name = "Inmage"
+Inmage.Parent = main1
+Inmage.Position = UDim2.new(0.39, 0, 0.1, 0)
+Inmage.BackgroundTransparency = 1
+Inmage.Size = UDim2.new(0, 40, 0, 40)
+Inmage.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png"
+
+
+
+Data.Name = "Data"
+Data.Parent = main1
+Data.Position = UDim2.new(0.5, 0, 0.7, 0)
+Data.Font = Enum.Font.SourceSans
+Data.TextColor3 = Color3.fromRGB(255, 255, 255)
+Data.TextSize = 14.000
+
+local function getCurrentDate()
+    local currentDate = os.date("*t")  -- Получаем текущую дату и время
+    local day = currentDate.day
+    local month = currentDate.month
+    local year = currentDate.year
+
+    -- Формируем строку в формате "день. месяц. год"
+    return string.format("%d.%d.%d", day, month, year)
+end
+
+Data.Text = "Today: " .. getCurrentDate()
+
+Info5.Name = "Info5"
+Info5.Parent = main
+Info5.Position = UDim2.new(0.5, 0, 0.1, 0)
+Info5.Font = Enum.Font.SourceSans
+Info5.Text = " Evade beta "
+Info5.TextColor3 = Color3.fromRGB(255, 165, 0)
+Info5.TextSize = 25.000
+
+
+Nide1.Name = "Nide1"
+Nide1.Parent = main1
+Nide1.AnchorPoint = Vector2.new(1, 0)
+Nide1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Nide1.Position = UDim2.new(0.7, 0, 0.87, 0)
+Nide1.Size = UDim2.new(0, 69, 0, 25)
+Nide1.Font = Enum.Font.SourceSans
+Nide1.Text = "Visible Nick"
+Nide1.TextColor3 = Color3.fromRGB(0, 128, 0)
+Nide1.TextSize = 13.000
+Nide1.MouseButton1Down:Connect(function()
+Nick.Text = game.Players.LocalPlayer.Name
+Nide.Visible = true
+Nide1.Visible = false
+end)
+
+Nide.Name = "Nide"
+Nide.Parent = main1
+Nide.AnchorPoint = Vector2.new(1, 0)
+Nide.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Nide.Position = UDim2.new(0.7, 0, 0.87, 0)
+Nide.Size = UDim2.new(0, 69, 0, 25)
+Nide.Font = Enum.Font.SourceSans
+Nide.Text = "No Visible Nick"
+Nide.TextColor3 = Color3.fromRGB(255, 0, 0)
+Nide.TextSize = 13.000
+Nide.Visible = false
+Nide.MouseButton1Down:Connect(function()
+Nick.Text = string.rep("*", #game.Players.LocalPlayer.Name)
+Nide.Visible = false
+Nide1.Visible = true
+end)
+
+YouTube.Name = "YouTube"
+YouTube.Parent = main
+YouTube.Position = UDim2.new(0.5, 0, -0.1, 0)
+YouTube.Font = Enum.Font.SourceSans
+YouTube.Text = " Creator:@BINCOOD "
+YouTube.TextColor3 = Color3.fromRGB(148, 0, 211)
+YouTube.TextSize = 25.000
