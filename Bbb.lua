@@ -1,10 +1,37 @@
 crashy = true
 on = false
+
+-- Проверка наличия старого GUI и его удаление
 if game.CoreGui:FindFirstChild('gui') then
     game.CoreGui.ESP:Destroy()
 elseif game.Players.LocalPlayer.PlayerGui:FindFirstChild('gui') then
     game.Players.LocalPlayer.PlayerGui.ESP:Destroy()
 end
+
+-- Функция для генерации случайного имени
+function generateRandomName(length)
+    local chars = "��𒅒 и𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒𒅒�������������������"
+    local name = ""
+    for i = 1, length do
+        local randomIndex = math.random(1, #chars)
+        name = name .. chars:sub(randomIndex, randomIndex)
+    end
+    return name
+end
+
+-- Создание нового GUI
+local gui = Instance.new('ScreenGui')
+if crashy == false then
+    gui.Parent = game.CoreGui
+else
+    gui.Parent = game.Players.LocalPlayer.PlayerGui
+end
+
+-- Генерация случайного имени для GUI
+gui.Name = generateRandomName(27)  -- Генерируем случайное имя длиной 8 символов
+gui.ResetOnSpawn = false
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
 local main = Instance.new('Frame', V1)
 local main1 = Instance.new('Frame', V1)
 local FPS = Instance.new("ScreenGui")
@@ -47,18 +74,6 @@ local Nide1 = Instance.new("TextButton")
 local Nide = Instance.new("TextButton")
 local YouTube = Instance.new("TextLabel")
 
-
---Properties:
-local gui = Instance.new('ScreenGui')
-if crashy == false then
-    gui.Parent = game.CoreGui
-else
-    gui.Parent = game.Players.LocalPlayer.PlayerGui
-end
-gui.Name = "gui"
-gui.ResetOnSpawn = false
-gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
 S.Name = "S"
 S.Parent = game.CoreGui
 
@@ -66,6 +81,7 @@ S.Parent = game.CoreGui
 main.Parent = gui
 main.AnchorPoint = Vector2.new(0.9, 0)
 main.Active = true
+main.Name = generateRandomName(27)
 main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 main.Position = UDim2.new(0.6, 0, 0.3, 0)
 main.Size = UDim2.new(0, 180, 0, 200)
@@ -74,6 +90,7 @@ main.Draggable = true
 main1.Parent = main
 main1.AnchorPoint = Vector2.new(0.9, 0)
 main1.Active = true
+main1.Name = generateRandomName(27)
 main1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 main1.Position = UDim2.new(2, 0, 0, 0)
 main1.Size = UDim2.new(0, 180, 0, 200)
@@ -82,6 +99,7 @@ main1.Visible = false
 V1.Parent = S
 V1.AnchorPoint = Vector2.new(0.9, 0)
 V1.Active = true
+V1.Name = generateRandomName(27)
 V1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 V1.BackgroundTransparency = 1.000
 V1.Position = UDim2.new(0.997, 0, 0.13, 0)
@@ -110,6 +128,7 @@ Open.Parent = V1
 Open.AnchorPoint = Vector2.new(0.9, 0)
 Open.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Open.Position = UDim2.new(0.898, 0, 0.0325, 0)
+Open.Name = generateRandomName(27)
 Open.Size = UDim2.new(0, 20, 0, 20)
 Open.Font = Enum.Font.SourceSans
 Open.Text = "+"
@@ -128,6 +147,7 @@ Close.AnchorPoint = Vector2.new(0.9, 0)
 Close.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Close.Position = UDim2.new(0.898, 0, 0.0325, 0)
 Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Name = generateRandomName(27)
 Close.Font = Enum.Font.SourceSans
 Close.Text = "-"
 Close.TextColor3 = Color3.fromRGB(255, 0, 0)
@@ -145,6 +165,7 @@ exit.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 exit.Position = UDim2.new(0.615, 0, 0.87, 0)
 exit.Size = UDim2.new(0, 50, 0, 20)
 exit.Font = Enum.Font.SourceSans
+exit.Name = generateRandomName(27)
 exit.Text = " Exit Script"
 exit.TextColor3 = Color3.fromRGB(255, 0, 0)
 exit.TextSize = 14.000
@@ -157,6 +178,7 @@ end)
 Esp1.Name = "Esp1"
 Esp1.Parent = main
 Esp1.AnchorPoint = Vector2.new(1, 0)
+Esp1.Name = generateRandomName(27)
 Esp1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Esp1.Position = UDim2.new(0.45, 0, 0.2, 0)
 Esp1.Size = UDim2.new(0, 69, 0, 25)
@@ -296,6 +318,7 @@ Esp3.Name = "Esp3"
 Esp3.Parent = main
 Esp3.AnchorPoint = Vector2.new(1, 0)
 Esp3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp3.Name = generateRandomName(27)
 Esp3.Position = UDim2.new(0.92, 0, 0.2, 0)
 Esp3.Size = UDim2.new(0, 69, 0, 25)
 Esp3.Font = Enum.Font.SourceSans
@@ -342,6 +365,7 @@ AntiNextbot1.Name = "AntiNextbot1"
 AntiNextbot1.Parent = main
 AntiNextbot1.AnchorPoint = Vector2.new(1, 0)
 AntiNextbot1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+AntiNextbot1.Name = generateRandomName(27)
 AntiNextbot1.Position = UDim2.new(0.92, 0, 0.4, 0)
 AntiNextbot1.Size = UDim2.new(0, 69, 0, 25)
 AntiNextbot1.Font = Enum.Font.SourceSans
@@ -520,6 +544,7 @@ Esp5.Name = "Esp5"
 Esp5.Parent = main
 Esp5.AnchorPoint = Vector2.new(1, 0)
 Esp5.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Esp5.Name = generateRandomName(27)
 Esp5.Position = UDim2.new(0.45, 0, 0.4, 0)
 Esp5.Size = UDim2.new(0, 69, 0, 25)
 Esp5.Font = Enum.Font.SourceSans
@@ -550,419 +575,4 @@ for _, obj in ipairs(game.Workspace:GetDescendants()) do
             else
                 -- Для остальных объектов удаляем дочерние BasePart, не входящие в "Scanners"
                 for _, child in ipairs(obj:GetDescendants()) do
-                    local isInScanners = child:IsDescendantOf(obj:FindFirstChild("Scanners"))
-                    if child:IsA("BasePart") and not isInScanners then
-                        child:Destroy()
-                    end
-                end
-            end
-            break -- Переход к следующему объекту после обработки
-        end
-    end
-end
-end)
-
-
-Speed.Name = "Speed"
-Speed.Parent = main
-Speed.AnchorPoint = Vector2.new(1, 0)
-Speed.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Speed.Position = UDim2.new(0.45, 0, 0.6, 0)
-Speed.Size = UDim2.new(0, 69, 0, 25)
-Speed.Font = Enum.Font.SourceSans
-Speed.Text = " Esp Health "
-Speed.TextColor3 = Color3.fromRGB(255, 255, 255)
-Speed.TextSize = 13.000
-Speed.MouseButton1Down:Connect(function()
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local LocalPlayer = Players.LocalPlayer
-
--- Таблица для хранения активных кругов
-local activeCircles = {}
-
--- Функция для расчёта цвета RGB от зелёного до красного
-local function getHealthColor(healthPercent)
-    local red = 255 * (1 - healthPercent) -- Чем меньше здоровья, тем больше красного
-    local green = 255 * healthPercent     -- Чем больше здоровья, тем больше зелёного
-    return Color3.fromRGB(math.floor(red), math.floor(green), 0) -- Синий остаётся 0
-end
-
--- Функция для создания ESP-круга
-local function createESPCircle(player)
-    -- Пропускаем создание круга для локального игрока
-    if player == LocalPlayer then
-        return
-    end
-
-    -- Проверяем, существует ли уже круг для этого персонажа
-    if activeCircles[player] then
-        return
-    end
-
-    -- Проверяем, есть ли у игрока персонаж и HumanoidRootPart
-    local character = player.Character
-    if not character or not character:FindFirstChild("HumanoidRootPart") then
-        return
-    end
-
-    -- Создаем BillboardGui
-    local billboardGui = Instance.new("BillboardGui")
-    billboardGui.Name = "ESP_Circle"
-    billboardGui.Parent = character
-    billboardGui.Adornee = character.HumanoidRootPart
-    billboardGui.Size = UDim2.new(2.5, 0, 2.5, 0) -- Размер круга
-    billboardGui.AlwaysOnTop = true -- Всегда поверх объектов
-    billboardGui.LightInfluence = 0 -- Отключить влияние освещения
-    billboardGui.StudsOffsetWorldSpace = Vector3.new(0, 6, 0) -- Позиционирование выше головы
-
-    -- Создаем круг (Frame)
-    local frame = Instance.new("Frame")
-    frame.Size = UDim2.new(1, 0, 1, 0)
-    frame.BackgroundTransparency = 1
-    frame.Parent = billboardGui
-
-    -- Создаем UIStroke для круга
-    local stroke = Instance.new("UIStroke")
-    stroke.Parent = frame
-    stroke.Thickness = 2 -- Толщина границы
-    stroke.Color = getHealthColor(1) -- Начальный цвет: зелёный (100% здоровья)
-
-    -- Делаем круг
-    local corner = Instance.new("UICorner")
-    corner.CornerRadius = UDim.new(1, 0)
-    corner.Parent = frame
-
-    -- Функция для обновления цвета круга
-    local function updateCircleColor(humanoid)
-        local healthPercent = humanoid.Health / humanoid.MaxHealth
-        stroke.Color = getHealthColor(healthPercent)
-    end
-
-    -- Подключаем обновление цвета к изменению здоровья
-    local humanoid = character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.HealthChanged:Connect(function()
-            updateCircleColor(humanoid)
-        end)
-
-        -- Устанавливаем начальный цвет
-        updateCircleColor(humanoid)
-    end
-
-    -- Сохраняем круг в таблицу
-    activeCircles[player] = billboardGui
-end
-
--- Функция для обновления круга после возрождения персонажа
-local function onCharacterAdded(player, character)
-    -- Удаляем старый круг, если он есть
-    if activeCircles[player] then
-        activeCircles[player]:Destroy()
-        activeCircles[player] = nil
-    end
-
-    -- Ждём, пока персонаж полностью загрузится
-    character:WaitForChild("HumanoidRootPart", 5)
-    createESPCircle(player)
-end
-
--- Отслеживаем новых игроков
-Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function(character)
-        onCharacterAdded(player, character)
-    end)
-end)
-
--- Отслеживаем существующих игроков
-for _, player in ipairs(Players:GetPlayers()) do
-    player.CharacterAdded:Connect(function(character)
-        onCharacterAdded(player, character)
-    end)
-
-    -- Если персонаж уже существует, создаём круг
-    if player.Character then
-        onCharacterAdded(player, player.Character)
-    end
-end
-
--- Удаляем круги, если игрок выходит
-Players.PlayerRemoving:Connect(function(player)
-    if activeCircles[player] then
-        activeCircles[player]:Destroy()
-        activeCircles[player] = nil
-    end
-end)
-end)
-
-
-Speed1.Name = "Speed1"
-Speed1.Parent = main
-Speed1.AnchorPoint = Vector2.new(1, 0)
-Speed1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Speed1.Position = UDim2.new(0.92, 0, 0.6, 0)
-Speed1.Size = UDim2.new(0, 69, 0, 25)
-Speed1.Font = Enum.Font.SourceSans
-Speed1.Text = " Esp Gun "
-Speed1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Speed1.TextSize = 13.000
-Speed1.MouseButton1Down:Connect(function()
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer  -- Получаем локального игрока
-
--- Список уже обработанных частей для предотвращения повторной обработки
-local processedParts = {}
-
--- Функция для создания BoxAdornment
-local function createBoxAdornment(part)
-    -- Проверяем, есть ли уже BoxAdornment в части
-    if not part:FindFirstChild("BoxAdornment") then
-        local adornment = Instance.new("BoxHandleAdornment")
-        adornment.Name = "BoxAdornment" -- Устанавливаем имя, чтобы легко находить
-        adornment.Size = part.Size -- Размер как у части
-        adornment.Color3 = Color3.new(1, 1, 1) -- Белый цвет
-        adornment.Transparency = 0.2 -- Полупрозрачный
-        adornment.Adornee = part -- Привязываем к части
-        adornment.AlwaysOnTop = true -- Видно через стены
-        adornment.ZIndex = 1 -- Приоритет отображения
-        adornment.AdornCullingMode = Enum.AdornCullingMode.Never
-        adornment.Parent = part -- Помещаем в ту же часть
-    end
-end
-
--- Функция для обработки всех частей внутри инструмента (Tool)
-local function adornTool(tool)
-    for _, descendant in ipairs(tool:GetDescendants()) do
-        if descendant:IsA("BasePart") and not processedParts[descendant] then
-            createBoxAdornment(descendant)
-            processedParts[descendant] = true -- Помечаем как обработанную
-        end
-    end
-end
-
--- Функция для обработки инструментов у персонажа игрока
-local function adornPlayerCharacter(character)
-    -- Пропускаем вашего персонажа (локального игрока)
-    if character.Parent == LocalPlayer then
-        return
-    end
-    
-    -- Обрабатываем уже имеющиеся инструменты
-    for _, child in ipairs(character:GetChildren()) do
-        if child:IsA("Tool") then
-            adornTool(child)
-        end
-    end
-
-    -- Слушаем добавление новых инструментов в персонажа
-    character.ChildAdded:Connect(function(child)
-        if child:IsA("Tool") then
-            adornTool(child)
-        end
-    end)
-
-    -- Слушаем удаление частей (например, если инструмент или часть была удалена)
-    character.ChildRemoved:Connect(function(child)
-        if child:IsA("BasePart") then
-            processedParts[child] = nil -- Убираем из кеша обработанных частей
-        end
-    end)
-end
-
--- Функция для обновления ESP для всех игроков
-local function updateESP()
-    -- Обрабатываем уже существующих игроков
-    for _, player in ipairs(Players:GetPlayers()) do
-        if player ~= LocalPlayer and player.Character then
-            adornPlayerCharacter(player.Character)
-        end
-
-        -- Следим за появлением нового персонажа
-        player.CharacterAdded:Connect(function(character)
-            if player ~= LocalPlayer then
-                adornPlayerCharacter(character)
-            end
-        end)
-    end
-
-    -- Следим за появлением новых игроков
-    Players.PlayerAdded:Connect(function(player)
-        player.CharacterAdded:Connect(function(character)
-            if player ~= LocalPlayer then
-                adornPlayerCharacter(character)
-            end
-        end)
-    end)
-end
-
--- Обновление ESP при запуске
-updateESP()
-end)
-
-
-Open1.Name = "Open1"
-Open1.Parent = main
-Open1.AnchorPoint = Vector2.new(0.9, 0)
-Open1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Open1.Position = UDim2.new(0.99, 0, 0, 0)
-Open1.Size = UDim2.new(0, 20, 0, 20)
-Open1.Font = Enum.Font.SourceSans
-Open1.Text = ">"
-Open1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Open1.TextSize = 39.000
-Open1.MouseButton1Down:Connect(function()
-main1.Visible = true
-Open1.Visible = false
-Close1.Visible = true
-end)
-
-Close1.Name = "Close1"
-Close1.Parent = main
-Close1.AnchorPoint = Vector2.new(0.9, 0)
-Close1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Close1.Position = UDim2.new(0.99, 0, 0, 0)
-Close1.Size = UDim2.new(0, 20, 0, 20)
-Close1.Font = Enum.Font.SourceSans
-Close1.Text = "<"
-Close1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Close1.TextSize = 39.000
-Close1.Visible = false
-Close1.MouseButton1Down:Connect(function()
-main1.Visible = false
-Close1.Visible = false
-Open1.Visible = true
-end)
-
-
-Fps.Name = "Fps"
-Fps.Parent = main1
-Fps.Position = UDim2.new(0.5, 0, 0.5, 0)
-Fps.Font = Enum.Font.SourceSans
-Fps.Text = "FPS: Calculating..."
-Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
-Fps.TextSize = 14.000
-
-
-local lastTime = tick()
-local fps = 0
-
-game:GetService("RunService").Heartbeat:Connect(function()
-    local currentTime = tick()
-    fps = math.floor(1 / (currentTime - lastTime))
-    lastTime = currentTime
-    Fps.Text = "FPS: " .. fps
-end)
-
-Time.Name = "Time"
-Time.Parent = main1
-Time.Position = UDim2.new(0.5, 0, 0.6, 0)
-Time.Font = Enum.Font.SourceSans
-Time.Text = "Time: 0s"
-Time.TextColor3 = Color3.fromRGB(255, 255, 255)
-Time.TextSize = 14.000
-
-local startTime = tick()
-
-game:GetService("RunService").Heartbeat:Connect(function()
-    local elapsedTime = tick() - startTime
-    local seconds = math.floor(elapsedTime)
-    local minutes = math.floor(seconds / 60)
-    local hours = math.floor(minutes / 60)
-    minutes = minutes % 60
-    seconds = seconds % 60
-    
-    if hours > 0 then
-        Time.Text = string.format("Time: %dh %dm %ds", hours, minutes, seconds)
-    elseif minutes > 0 then
-        Time.Text = string.format("Time: %dm %ds", minutes, seconds)
-    else
-        Time.Text = string.format("Time: %ds", seconds)
-    end
-end)
-
-
-Nick.Name = "Nick"
-Nick.Parent = main1
-Nick.Position = UDim2.new(0.5, 0, 0.4, 0)
-Nick.Font = Enum.Font.SourceSans
-Nick.Text = string.rep("*", #game.Players.LocalPlayer.Name)
-Nick.TextColor3 = Color3.fromRGB(255, 255, 255)
-Nick.TextSize = 14.000
-
-Inmage.Name = "Inmage"
-Inmage.Parent = main1
-Inmage.Position = UDim2.new(0.39, 0, 0.1, 0)
-Inmage.BackgroundTransparency = 1
-Inmage.Size = UDim2.new(0, 40, 0, 40)
-Inmage.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=100&height=100&format=png"
-
-
-
-Data.Name = "Data"
-Data.Parent = main1
-Data.Position = UDim2.new(0.5, 0, 0.7, 0)
-Data.Font = Enum.Font.SourceSans
-Data.TextColor3 = Color3.fromRGB(255, 255, 255)
-Data.TextSize = 14.000
-
-local function getCurrentDate()
-    local currentDate = os.date("*t")  -- Получаем текущую дату и время
-    local day = currentDate.day
-    local month = currentDate.month
-    local year = currentDate.year
-
-    -- Формируем строку в формате "день. месяц. год"
-    return string.format("%d.%d.%d", day, month, year)
-end
-
-Data.Text = "Today: " .. getCurrentDate()
-
-Info5.Name = "Info5"
-Info5.Parent = main
-Info5.Position = UDim2.new(0.5, 0, 0.1, 0)
-Info5.Font = Enum.Font.SourceSans
-Info5.Text = " Scp Roleplay "
-Info5.TextColor3 = Color3.fromRGB(255, 165, 0)
-Info5.TextSize = 25.000
-
-
-Nide1.Name = "Nide1"
-Nide1.Parent = main1
-Nide1.AnchorPoint = Vector2.new(1, 0)
-Nide1.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Nide1.Position = UDim2.new(0.7, 0, 0.87, 0)
-Nide1.Size = UDim2.new(0, 69, 0, 25)
-Nide1.Font = Enum.Font.SourceSans
-Nide1.Text = "Visible Nick"
-Nide1.TextColor3 = Color3.fromRGB(0, 128, 0)
-Nide1.TextSize = 13.000
-Nide1.MouseButton1Down:Connect(function()
-Nick.Text = game.Players.LocalPlayer.Name
-Nide.Visible = true
-Nide1.Visible = false
-end)
-
-Nide.Name = "Nide"
-Nide.Parent = main1
-Nide.AnchorPoint = Vector2.new(1, 0)
-Nide.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Nide.Position = UDim2.new(0.7, 0, 0.87, 0)
-Nide.Size = UDim2.new(0, 69, 0, 25)
-Nide.Font = Enum.Font.SourceSans
-Nide.Text = "No Visible Nick"
-Nide.TextColor3 = Color3.fromRGB(255, 0, 0)
-Nide.TextSize = 13.000
-Nide.Visible = false
-Nide.MouseButton1Down:Connect(function()
-Nick.Text = string.rep("*", #game.Players.LocalPlayer.Name)
-Nide.Visible = false
-Nide1.Visible = true
-end)
-
-YouTube.Name = "YouTube"
-YouTube.Parent = main
-YouTube.Position = UDim2.new(0.5, 0, -0.1, 0)
-YouTube.Font = Enum.Font.SourceSans
-YouTube.Text = " Creator: @BINCOOD "
-YouTube.TextColor3 = Color3.fromRGB(148, 0, 211)
-YouTube.TextSize = 25.000
+                    local isInScanners = child:IsDescendantOf(obj:FindFirstChild
